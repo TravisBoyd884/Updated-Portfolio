@@ -48,7 +48,7 @@ const NavLeft = ({
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="block lg:hidden text-gray-950 text-2xl"
-        onClick={() => setIsOpen((pv) => !pv)}
+        onClick={() => setIsOpen((pv: any) => !pv)}
       >
         <FiMenu />
       </motion.button>
