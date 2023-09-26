@@ -34,7 +34,15 @@ const ColorChangeCards = () => {
   );
 };
 
-const Card = ({ heading, description, imgSrc }) => {
+const Card = ({
+  heading,
+  description,
+  imgSrc,
+}: {
+  heading: any;
+  description: any;
+  imgSrc: any;
+}) => {
   return (
     <motion.div
       transition={{
@@ -55,7 +63,7 @@ const Card = ({ heading, description, imgSrc }) => {
         <FiArrowRight className="text-3xl group-hover:-rotate-45 transition-transform duration-500 ml-auto" />
         <div>
           <h4>
-            {heading.split("").map((l, i) => (
+            {heading.split("").map((l: any, i: any) => (
               <ShiftLetter letter={l} key={i} />
             ))}
           </h4>
@@ -66,7 +74,7 @@ const Card = ({ heading, description, imgSrc }) => {
   );
 };
 
-const ShiftLetter = ({ letter }) => {
+const ShiftLetter = ({ letter }: { letter: any }) => {
   return (
     <div className="inline-block overflow-hidden h-[36px] font-semibold text-3xl">
       <motion.span

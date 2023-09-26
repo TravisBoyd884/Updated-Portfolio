@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 import Image from "next/image";
 import FancyButton from "./FancyButton";
 
-export default function Hero({ parallaxRef }) {
+export default function Hero({ parallaxRef }: { parallaxRef: any }) {
   return (
     <div className="flex md:gap-40 flex-col md:flex-row items-center">
       <div className="flex md:justify-start w-1/2 mt-20 md:mt-40 md:ml-36 flex-col font-sans text-white text-center md:text-left">

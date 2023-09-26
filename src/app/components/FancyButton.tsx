@@ -1,4 +1,4 @@
-export default function NeuButton({ parallaxRef }) {
+export default function NeuButton({ parallaxRef }: { parallaxRef: any }) {
   return (
     <button
       onClick={() => {

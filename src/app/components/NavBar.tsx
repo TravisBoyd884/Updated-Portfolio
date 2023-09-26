@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
 
-export default function FlipNav({ parallaxRef }) {
+export default function FlipNav({ parallaxRef }: { parallaxRef: any }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
