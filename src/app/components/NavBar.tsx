@@ -35,7 +35,13 @@ const Logo = () => {
   );
 };
 
-const NavLeft = ({ setIsOpen, parallaxRef }) => {
+const NavLeft = ({
+  setIsOpen,
+  parallaxRef,
+}: {
+  setIsOpen: any;
+  parallaxRef: any;
+}) => {
   return (
     <div className="flex items-center gap-6">
       <motion.button
@@ -55,7 +61,7 @@ const NavLeft = ({ setIsOpen, parallaxRef }) => {
   );
 };
 
-const NavLink = ({ text, parallaxRef }) => {
+const NavLink = ({ text, parallaxRef }: { text: any; parallaxRef: any }) => {
   return (
     <a
       href="#"
@@ -99,7 +105,7 @@ const NavRight = () => {
   );
 };
 
-const NavMenu = ({ isOpen }) => {
+const NavMenu = ({ isOpen }: { isOpen: any }) => {
   return (
     <motion.div
       variants={menuVariants}
@@ -115,7 +121,7 @@ const NavMenu = ({ isOpen }) => {
   );
 };
 
-const MenuLink = ({ text }) => {
+const MenuLink = ({ text }: { text: any }) => {
   return (
     <motion.a
       variants={menuLinkVariants}
