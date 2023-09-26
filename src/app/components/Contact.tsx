@@ -16,7 +16,13 @@ const ShiftingContactForm = () => {
   );
 };
 
-const Form = ({ selected, setSelected }) => {
+const Form = ({
+  selected,
+  setSelected,
+}: {
+  selected: any;
+  setSelected: any;
+}) => {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
@@ -117,7 +123,13 @@ const Form = ({ selected, setSelected }) => {
   );
 };
 
-const FormSelect = ({ selected, setSelected }) => {
+const FormSelect = ({
+  selected,
+  setSelected,
+}: {
+  selected: any;
+  setSelected: any;
+}) => {
   return (
     <div className="border-[1px] rounded border-black overflow-hidden font-medium w-fit">
       <button
@@ -154,7 +166,7 @@ const FormSelect = ({ selected, setSelected }) => {
   );
 };
 
-const Images = ({ selected }) => {
+const Images = ({ selected }: { selected: any }) => {
   return (
     <div className="bg-white relative overflow-hidden w-full min-h-[100px]">
       <motion.div
