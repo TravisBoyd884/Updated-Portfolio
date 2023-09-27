@@ -5,19 +5,20 @@ import AltNavBar from "../components/AltNavBar";
 import EmailButton from "../components/EmailButton";
 
 export default function page() {
-  const [width, setWidth] = useState<number>(window.innerWidth);
+  const [width, setWidth] = useState<number>();
 
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
   }
   useEffect(() => {
+    setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
     };
   }, []);
 
-  const isMobile = width <= 768;
+  const isMobile = width! <= 768;
   let text: String = "";
   {
     isMobile
