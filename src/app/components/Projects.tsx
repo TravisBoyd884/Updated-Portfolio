@@ -6,19 +6,19 @@ const ColorChangeCards = () => {
   return (
     <div>
       <div className="flex justify-center z-50">
-        <div className="p-4 md:p-8 bg-black w-fit">
+        <div className="p-4 md:p-8 bg-black md:w-[50vw]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full max-w-6xl mx-auto">
             <Link href="/quickflip">
               <Card
                 heading="Study"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+                description="A flash card app created with JavaFX"
                 imgSrc="/quickflip.jpg"
               />
             </Link>
             <Link href="https://code-type-pi.vercel.app/" target="_blank">
               <Card
                 heading="Play"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+                description="Created with react and typescript"
                 imgSrc="/codetype.png"
               />
             </Link>
@@ -28,13 +28,13 @@ const ColorChangeCards = () => {
             >
               <Card
                 heading="Strategize"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+                description="Built with C++ and SDL2"
                 imgSrc="/chess.png"
               />
             </Link>
             <Card
               heading="Coming Soon"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+              description=""
               imgSrc="/coming-soon.jpg"
             />
           </div>
