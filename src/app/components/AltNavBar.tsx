@@ -1,14 +1,14 @@
-/* import { Parallax } from "@react-spring/parallax"; */
+"use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FiMenu, FiArrowRight } from "react-icons/fi";
 
-export default function FlipNav({ parallaxRef }: { parallaxRef: any }) {
+export default function FlipNav({ isContactPage }: { isContactPage: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="bg-white p-4 border-b-[1px] border-gray-200 flex items-center justify-between relative">
-      <NavLeft setIsOpen={setIsOpen} parallaxRef={parallaxRef} />
-      <NavMenu isOpen={isOpen} parallaxRef={parallaxRef} />
+      <NavLeft setIsOpen={setIsOpen} isContactPage={isContactPage} />
+      <NavMenu isOpen={isOpen} />
     </nav>
   );
 }
@@ -38,10 +38,10 @@ const Logo = () => {
 
 const NavLeft = ({
   setIsOpen,
-  parallaxRef,
+  isContactPage,
 }: {
   setIsOpen: any;
-  parallaxRef: any;
+  isContactPage: any;
 }) => {
   return (
     <div className="flex items-center gap-6">
@@ -54,34 +54,24 @@ const NavLeft = ({
         <FiMenu />
       </motion.button>
       <Logo />
-      <NavLink text="Home" parallaxRef={parallaxRef} href="#" />
-      <NavLink text="Projects" parallaxRef={parallaxRef} href="#" />
-      <NavLink text="FAQ" parallaxRef={parallaxRef} href="#" />
-      <NavLink text="Contact" parallaxRef={parallaxRef} href="/contact" />
+      {isContactPage ? (
+        <NavLink text="Home" href="/" />
+      ) : (
+        <>
+          <NavLink text="Home" href="/" />
+          <NavLink text="Contact" href="/contact" />
+        </>
+      )}
     </div>
   );
 };
 
-const NavLink = ({
-  text,
-  parallaxRef,
-  href,
-}: {
-  text: any;
-  parallaxRef: any;
-  href: any;
-}) => {
+const NavLink = ({ text, href }: { text: any; href: any }) => {
   return (
     <a
       href={href}
       rel="nofollow"
       className="hidden lg:block h-[30px] overflow-hidden font-medium"
-      onClick={() => {
-        let page = 0;
-        if (text === "Projects") page = 1;
-        else if (text === "FAQ") page = 2;
-        if (text != "Contact") parallaxRef.current.scrollTo(page);
-      }}
     >
       <motion.div whileHover={{ y: -30 }}>
         <span className="flex items-center h-[30px] text-gray-500">{text}</span>
@@ -93,34 +83,7 @@ const NavLink = ({
   );
 };
 
-const NavRight = () => {
-  return (
-    <div className="flex items-center gap-4">
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-medium rounded-md whitespace-nowrap"
-      >
-        Sign in
-      </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="px-4 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium rounded-md whitespace-nowrap"
-      >
-        Sign up
-      </motion.button>
-    </div>
-  );
-};
-
-const NavMenu = ({
-  isOpen,
-  parallaxRef,
-}: {
-  isOpen: any;
-  parallaxRef: any;
-}) => {
+const NavMenu = ({ isOpen }: { isOpen: any }) => {
   return (
     <motion.div
       variants={menuVariants}
@@ -128,35 +91,18 @@ const NavMenu = ({
       animate={isOpen ? "open" : "closed"}
       className="absolute p-4 bg-white shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4"
     >
-      <MenuLink text="Home" href="#" parallaxRef={parallaxRef} />
-      <MenuLink text="Projects" href="#" parallaxRef={parallaxRef} />
-      <MenuLink text="FAQ" href="#" parallaxRef={parallaxRef} />
-      <MenuLink text="Contact" href="/contact" parallaxRef={parallaxRef} />
+      <MenuLink text="Home" />
     </motion.div>
   );
 };
 
-const MenuLink = ({
-  text,
-  href,
-  parallaxRef,
-}: {
-  text: any;
-  href: any;
-  parallaxRef: any;
-}) => {
+const MenuLink = ({ text }: { text: any }) => {
   return (
     <motion.a
       variants={menuLinkVariants}
       rel="nofollow"
-      href={href}
+      href="/"
       className="h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2"
-      onClick={() => {
-        let page = 0;
-        if (text === "Projects") page = 1;
-        else if (text === "FAQ") page = 2;
-        if (text != "Contact") parallaxRef.current.scrollTo(page);
-      }}
     >
       <motion.span variants={menuLinkArrowVariants}>
         <FiArrowRight className="h-[30px] text-gray-950" />

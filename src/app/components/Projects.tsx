@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -5,27 +6,36 @@ const ColorChangeCards = () => {
   return (
     <div>
       <div className="flex justify-center z-50">
-        <div className="p-4 md:p-8 bg-sky-50 w-fit">
+        <div className="p-4 md:p-8 bg-black w-fit">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full max-w-6xl mx-auto">
+            <Link href="/quickflip">
+              <Card
+                heading="Study"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+                imgSrc="/quickflip.jpg"
+              />
+            </Link>
+            <Link href="https://code-type-pi.vercel.app/" target="_blank">
+              <Card
+                heading="Play"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+                imgSrc="/codetype.png"
+              />
+            </Link>
+            <Link
+              href=" https://github.com/TravisBoyd884/Chess"
+              target="_blank"
+            >
+              <Card
+                heading="Strategize"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
+                imgSrc="/chess.png"
+              />
+            </Link>
             <Card
-              heading="Plan"
+              heading="Coming Soon"
               description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
-              imgSrc="/quickflip.jpg"
-            />
-            <Card
-              heading="Play"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
-              imgSrc="/codetype.png"
-            />
-            <Card
-              heading="Connect"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
-              imgSrc="/chess.png"
-            />
-            <Card
-              heading="Support"
-              description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, exercitationem."
-              imgSrc="https://images.unsplash.com/photo-1576328077645-2dd68934d2b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80"
+              imgSrc="/coming-soon.jpg"
             />
           </div>
         </div>

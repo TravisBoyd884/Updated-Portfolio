@@ -18,7 +18,7 @@
     "@types/three": "^0.156.0",
     "feather-icons": "^4.29.1",
     "framer-motion": "^10.16.4",
-    "next": "latest",
+    "next": "^13.5.3",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
