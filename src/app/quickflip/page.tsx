@@ -21,10 +21,16 @@ export default function Home() {
   const isMobile = width! <= 768;
   return (
     <>
-      <div className="absolute">
+      <div className="absolute w-screen">
         <AltNavBar isContactPage={false} />
       </div>
-      {isMobile ? <MobileProjects /> : <OppositeScroll />}
+      {isMobile ? (
+        <div className="w-screen h-screen bg-black text-white flex justify-center items-center">
+          This page does not work on mobile yet.
+        </div>
+      ) : (
+        <OppositeScroll />
+      )}
     </>
   );
 }

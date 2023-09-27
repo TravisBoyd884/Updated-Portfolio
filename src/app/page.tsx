@@ -47,8 +47,10 @@ export default function Home() {
           className="flex justify-center items-center flex-col gap-28"
           offset={2}
         >
-          <FancyContactButton />
-          <div className="w-fit bg-zinc-700 rounded-xl p-10">
+          <div className="md:visible invisible">
+            <FancyContactButton />
+          </div>
+          <div className="w-fit bg-zinc-700 rounded-xl p-10 md:visible invisible">
             <FAQ />
           </div>
         </ParallaxLayer>
