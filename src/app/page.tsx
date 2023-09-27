@@ -47,7 +47,7 @@ export default function Home() {
           className="flex justify-center items-center flex-col gap-28"
           offset={2}
         >
-          <FancyContactButton parallaxRef={parallaxRef} />
+          <FancyContactButton />
           <div className="w-fit bg-zinc-700 rounded-xl p-10">
             <FAQ />
           </div>
