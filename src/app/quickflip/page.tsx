@@ -18,7 +18,7 @@ export default function Home() {
     };
   }, []);
 
-  const isMobile = width <= 768;
+  const isMobile = width! <= 768;
   return (
     <>
       <div className="absolute">
