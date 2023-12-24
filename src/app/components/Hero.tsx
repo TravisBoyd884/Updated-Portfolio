@@ -2,6 +2,8 @@ import React from "react";
 import Reveal from "./Reveal";
 import Image from "next/image";
 import FancyButton from "./FancyButton";
+import FancyContactButton from "./FancyContactButton";
+import Link from "next/link";
 
 export default function Hero({ parallaxRef }: { parallaxRef: any }) {
   return (
@@ -18,13 +20,16 @@ export default function Hero({ parallaxRef }: { parallaxRef: any }) {
         <Reveal delay={0.6} inView={true}>
           <>
             <div className="md:ml-6 md:mb-3 md:mt-3 text-md md:text-2xl">
-              I&apos;m a 19 year old sophomore at Oakland University.
+              I&apos;m a junior at Oakland University studying Computer Science.
             </div>
             <div className="md:ml-6 md:mb-10 text-md md:text-2xl w-full invisible md:visible">
               My interests are web development and artificial intelligence.
             </div>
             <div className="md:ml-6 md:visible invisible">
-              <FancyButton parallaxRef={parallaxRef} />
+              {/* <FancyButton parallaxRef={parallaxRef} /> */}
+              <Link href="/resume.pdf" passHref download={"/resume.pdf"}>
+                <FancyContactButton text="Resume" />
+              </Link>
             </div>
           </>
         </Reveal>

@@ -1,6 +1,6 @@
 import { useFBO } from "@react-three/drei";
 import { useFrame, extend, createPortal } from "@react-three/fiber";
-import { useMemo, useRef, useEffect } from "react";
+import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
 import SimulationMaterial from "../shaders/SimulationMaterial";
@@ -23,7 +23,7 @@ export default function FBOParticles() {
     1,
     -1,
     1 / Math.pow(2, 53),
-    1
+    1,
   );
   const positions = new Float32Array([
     -1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0,
@@ -55,7 +55,7 @@ export default function FBOParticles() {
         value: null,
       },
     }),
-    []
+    [],
   );
 
   useFrame((state) => {
@@ -91,7 +91,7 @@ export default function FBOParticles() {
             />
           </bufferGeometry>
         </mesh>,
-        scene
+        scene,
       )}
       <points ref={points}>
         <bufferGeometry>

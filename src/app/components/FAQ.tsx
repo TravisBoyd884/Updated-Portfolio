@@ -9,23 +9,30 @@ const BasicFAQ = () => {
         <h3 className="text-center text-3xl font-semibold mb-4 text-white border-b-[3px] border-solid border-white pb-10 ">
           Frequently asked questions
         </h3>
-        <Question title="Can I have your resume?" defaultOpen>
-          <p>Sure. Email me.</p>
+        <Question title="Relevant Course Work" defaultOpen={false}>
+          <p className="leading-relaxed">
+            Data Structures & Algorithms, Intro to Networks, Object Oriented
+            Programming, Intro to C Programming and Unix, Discrete Math, Linear
+            Algebra.
+          </p>
         </Question>
-        <Question
-          title="Why did the chicken cross the road?"
-          defaultOpen={false}
-        >
-          <p>To get away from angular.</p>
+        <Question title="Languages" defaultOpen={false}>
+          <p>C/C++, Python, JavaScript, TypeScript, Java, HTML, CSS.</p>
+        </Question>
+        <Question title="Cloud/Databases" defaultOpen={false}>
+          <p>MongoDb, Firebase, Relational Database(mySql).</p>
+        </Question>
+        <Question title="Areas of Interest" defaultOpen={false}>
+          <p>
+            Web Design and Development, Computer Graphics, Artificial
+            Intelligence, Machine Learning.
+          </p>
         </Question>
         <Question title="How did you make this website?" defaultOpen={false}>
           <p>
             Next.js, Tailwind, Three.js, react-spring, framer-motion, and
             Vercel.
           </p>
-        </Question>
-        <Question title="Tabs or Spaces" defaultOpen={false}>
-          <p>Tabs.</p>
         </Question>
       </div>
     </div>

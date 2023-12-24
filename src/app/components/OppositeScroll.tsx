@@ -28,7 +28,7 @@ const Content = ({ content }: { content: any }) => {
       {content.map(
         (
           { id, title, description }: { id: any; title: any; description: any },
-          idx: any
+          idx: any,
         ) => (
           <div
             key={id}
@@ -43,7 +43,7 @@ const Content = ({ content }: { content: any }) => {
             </h3>
             <p className="font-light w-full max-w-md">{description}</p>
           </div>
-        )
+        ),
       )}
     </div>
   );
@@ -59,7 +59,7 @@ const Images = ({
   const top = useTransform(
     scrollYProgress,
     [0, 1],
-    [`-${(content.length - 1) * 100}vh`, "0vh"]
+    [`-${(content.length - 1) * 100}vh`, "0vh"],
   );
 
   return (
@@ -84,8 +84,7 @@ const items = [
   {
     id: 1,
     title: "A stunning flash card app made with JavaFX",
-    description:
-      "If the FBI wanted to get information out of me, all they'd have to do is make me use JAVAFX for 10 minutes.",
+    description: "",
     img: "/quickflip.jpg",
   },
   {
@@ -96,13 +95,13 @@ const items = [
   },
   {
     id: 3,
-    title: "FLash Cards are saved to a local text file.",
+    title: "Cards are saved to a local text file.",
     description: "",
     img: "/qf2.jpg",
   },
   {
     id: 4,
-    title: "Study Screen",
+    title: "Quiz yourself!",
     description: "",
     img: "qf3.jpg",
   },

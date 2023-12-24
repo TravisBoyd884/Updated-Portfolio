@@ -1,11 +1,9 @@
 "use client";
-/* import MultiBarParallax from "./components/MultiBarParallax"; */
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import bg from "../../public/sand.jpg";
+import bg from "../../public/color.jpg";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-/* import Contact from "./components/Contact"; */
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import { useRef } from "react";
@@ -48,21 +46,18 @@ export default function Home() {
           offset={2}
         >
           <div className="md:visible invisible">
-            <FancyContactButton />
+            <FancyContactButton text={"Contact"} />
           </div>
           <div className="w-fit bg-zinc-700 rounded-xl p-10 md:visible invisible">
             <FAQ />
           </div>
         </ParallaxLayer>
         <ParallaxLayer
-          className="absolute z-[-1] w-screen h-3/4 bg-zinc-800"
+          className="absolute z-[-1] w-screen h-3/4 bg-transparent backdrop-grayscale"
           offset={1.5}
           sticky={{ start: 1.5, end: 3 }}
         ></ParallaxLayer>
-        {/* <ParallaxLayer offset={1.9} sticky={{ start: 1.9, end: 2 }}> */}
-        {/* <MultiBarParallax /> */}
-        {/* </ParallaxLayer> */}
-        <Footer></Footer>
+        <Footer />
       </Parallax>
     </>
   );
