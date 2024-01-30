@@ -9,7 +9,7 @@ export default function page() {
   return (
     <>
       <Image
-        className="absolute z-[-1]"
+        className="absolute w-screen h-screen z-[-1] backdrop-grayscale overflow-hidden"
         src="/color.jpg"
         alt="background"
         width={1920}
@@ -18,9 +18,10 @@ export default function page() {
       <div className="fixed top-0 w-screen z-50">
         <AltNavBar isContactPage={true} />
       </div>
-      <div className="absolute w-screen h-screen flex justify-center items-center backdrop-grayscale">
+      <div className="absolute w-screen h-screen flex justify-center items-center ">
         <Contact />;
       </div>
+
       <Footer />
     </>
   );
